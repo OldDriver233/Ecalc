@@ -24,6 +24,8 @@ public:
 			break;
 		}
 	}
-	~Parse_unit()=default;
+	~Parse_unit() = default; 
+	short gettype() { return this->type; }
+	int getnum() { return this->num; }
 };
 
