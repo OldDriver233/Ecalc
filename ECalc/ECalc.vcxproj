@@ -151,11 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Calc.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Parse_unit.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Calc.cpp" />
     <ClCompile Include="ECalc.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Parse_unit.cpp" />
