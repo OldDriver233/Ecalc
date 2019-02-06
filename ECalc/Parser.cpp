@@ -20,6 +20,7 @@ std::vector<Parse_unit>* Parser::readParse()
 			sgn = false;
 			vec->push_back(Parse_unit(tmp));
 			vec->push_back(Parse_unit(strin[i]));
+			tmp = 0;
 		}
 	}
 	vec->push_back(Parse_unit(tmp));

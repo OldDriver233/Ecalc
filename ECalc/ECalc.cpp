@@ -5,13 +5,16 @@
 #include<stack>
 #include"Parse_unit.h"
 #include"Parser.h"
+#include"Calc.h"
 using namespace std;
 
 
 int main()
 {
 	Parser parser;
+	Calc calc;
+	calc.init();
 	auto ptr=parser.readParse();
-	//cout << (*ptr)[0].getnum();
+	cout << calc.calcResult(ptr);
 	return 0;
 }

@@ -9,6 +9,6 @@ public:
 	int calcResult(std::vector<Parse_unit>* vecp);
 	int calcOp(int numA, int op, int numB);
 	void init();
-	static std::map<int, int>priority_map;
+	std::map<int, int> priority_map;
 };
 

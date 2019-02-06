@@ -2,8 +2,8 @@
 class Parse_unit
 {
 private:
-	short type;//0=num,1=+,2=-£¬3=*£¬4=/
-	int num;
+	short type=0;//0=num,1=+,2=-£¬3=*£¬4=/
+	int num=0;
 public:
 	Parse_unit()=default;
 	Parse_unit(int number) :num(number) {};
