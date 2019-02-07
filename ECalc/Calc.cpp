@@ -8,6 +8,8 @@ void Calc::init()
 	this->priority_map.insert(std::pair<int, int>(2, 1));
 	this->priority_map.insert(std::pair<int, int>(3, 2));
 	this->priority_map.insert(std::pair<int, int>(4, 2));
+	this->priority_map.insert(std::pair<int, int>(5, 0));
+	this->priority_map.insert(std::pair<int, int>(6, 0));
 }
 
 int Calc::calcOp(int numA, int op, int numB)
@@ -35,7 +37,7 @@ int Calc::calcResult(std::vector<Parse_unit>* vecp)
 		if (!i.gettype())stNum.push(i.getnum());
 		else
 		{
-			if (stOp.empty() || this->priority_map[i.gettype()] >= this->priority_map[stOp.top()])
+			if (stOp.empty() || this->priority_map[i.gettype()] >= this->priority_map[stOp.top()] || i.gettype()==5)
 			{
 				stOp.push(i.gettype());
 			}
@@ -47,10 +49,11 @@ int Calc::calcResult(std::vector<Parse_unit>* vecp)
 					stNum.pop();
 					int a = stNum.top();
 					stNum.pop();
-					stNum.push(calcOp(a, stOp.top(),b));
+					stNum.push(calcOp(a, stOp.top(), b));
 					stOp.pop();
 				}
-				stOp.push(i.gettype());
+				if(i.gettype()!=6)stOp.push(i.gettype());
+				else if (!stOp.empty())stOp.pop();
 			}
 		}
 	}
